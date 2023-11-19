@@ -1,0 +1,138 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30px;
+
+  z-index: 10;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
+  }
+
+  &__btn {
+    padding: 7px 28px 6px;
+    margin-right: 20px;
+
+    border: 1px solid #fff;
+    border-radius: 3px;
+    color: inherit;
+    text-transform: uppercase;
+
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #fff;
+      color: #1C1C1C;
+
+      transition: 0.3s;
+    }
+  }
+
+  &__tel {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+  }
+
+  &__burger-wrap {
+    display: none;
+  }
+
+  &__burger {
+    display: inline-block;
+    padding: 8px;
+
+    border: none;
+    background-color: transparent;
+    // background-image: url("../img/burger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:before, &:after {
+      content: "";
+
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin-bottom: 4px;
+
+      background: #E0E0E0;
+      transition: transform .5s;
+    } 
+
+    &:after {
+      width: 16px;
+      margin-left: auto;
+    }
+  }
+
+  &__burger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin-bottom: 4px;
+
+    background: #E0E0E0;
+    opacity: 1;
+    transition: 1s;
+  }
+
+  &__burger.active {
+      // background-image: url("../img/closed.svg");
+    &:before, {
+      transform: translateY(6px) rotate(135deg);
+    }
+
+    &:after {
+      width: 24px;
+      transform: translateY(-6px) rotate(-135deg);
+    }
+
+    .header__burger-line {
+      opacity: 0;
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .header {
+    &__inner {
+      * {
+        flex-grow: 1;
+        flex-basis: 33%;
+      }
+
+      *:not(:first-child) {
+        text-align: center;
+      }
+
+      *:last-child {
+        text-align: right;
+      }
+    }
+
+    &__burger-wrap {
+      display: block;
+    }
+
+    &__tel {
+      display: none;
+    }
+  }
+}
+
+
+@media (max-width: 425px) {
+  .header {
+    &__btn {
+      margin-right: 0px;
+    }
+  }
+}

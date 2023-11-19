@@ -1,0 +1,24 @@
+$fontMain: 'SFProDisplay', sans-serif;
+
+$desktop: 1680px;
+$laptop: 1366px;
+$tablet: 1024px;
+$mobile: 768px;
+
+@keyframes show {
+  0% {
+    transform: translateX(-2000px);
+  }
+
+  70% {
+    transform: translateX(30px);
+  }
+
+  90% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
